@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+ button.right { float: right; margin-right: 40%; margin-top: 0.5%;}
+
+ form {
+  padding-top: 20px;
+  border: dashed 1px black;
+ }
