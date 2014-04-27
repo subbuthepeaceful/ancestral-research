@@ -1,65 +1,20 @@
-<h1>Research Checklist for <%= @checklist.first_middle_name %>&nbsp;<%= @checklist.last_name %></h1>
-<%= form_tag checklists_path, :class => "form-horizontal", :role => "form"  do %>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="inputEmail3" class="col-sm-4 control-label">Est. Birth Year:</label>
-        <div class="col-sm-4">
-          <%= text_field_tag "birth_year", @checklist.birth_year, :class => "form-control", :disabled => "disabled" %>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="inputEmail3" class="col-sm-4 control-label">Birth Location:</label>
-        <div class="col-sm-4">
-          <%= text_field_tag "birth_location", @checklist.birth_location, :class => "form-control", :disabled => "disabled" %>
-        </div>
-      </div>
-    </div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2><%= @checklist.first_middle_name %>&nbsp;<%= @checklist.last_name %></h2>
+    <p>Born:&nbsp;<%= @checklist.birth_year %>, <%= @checklist.birth_location %></p>
+    <p>Died:&nbsp;<%= @checklist.death_year %>, <%= @checklist.death_location %></p>
+    <p>Resident of <%= @checklist.lived_in %></p>
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="inputEmail3" class="col-sm-4 control-label">Lived In:</label>
-        <div class="col-sm-2">
-          <%= text_field_tag "state_1", @checklist.state(1), :class => "form-control", :disabled => "disabled" %>
-        </div>
-        <div class="col-sm-2">
-          <%= text_field_tag "state_2", @checklist.state(2), :class => "form-control", :disabled => "disabled" %>
-        </div>
-        <div class="col-sm-2">
-          <%= text_field_tag "state_3", @checklist.state(3), :class => "form-control", :disabled => "disabled" %>
+  <div class="panel-content">
+    <% @checklist.items.each do |item| -%>
+      <div class="row">
+        <div class="col-lg-10 checklist-row">
+          <span class="glyphicon glyphicon-unchecked"></span>
+          <span class="checklist-item"><%= item[:name] %></span>
+          <div class="checklist-line">
+          </div>
         </div>
       </div>
-    </div>
+    <% end -%>
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="inputEmail3" class="col-sm-4 control-label">Est. Death Year:</label>
-        <div class="col-sm-4">
-          <%= text_field_tag "death_year", @checklist.death_year, :class => "form-control", :disabled => "disabled" %>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="inputEmail3" class="col-sm-4 control-label">Death Location:</label>
-        <div class="col-sm-4">
-          <%= text_field_tag "death_location", @checklist.death_location, :class => "form-control", :disabled => "disabled" %>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end -%>
-<% @checklist.items.each do |item| -%>
-  <div class="row">
-    <div class="col-lg-10 checklist-row">
-      <span class="glyphicon glyphicon-unchecked"></span>
-      <span class="checklist-item"><%= item[:name] %></span>
-      <div class="checklist-line">
-      </div>
-    </div>
-  </div>
-<% end -%>
+</div>
