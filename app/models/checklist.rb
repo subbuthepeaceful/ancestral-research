@@ -52,6 +52,20 @@ class Checklist < ActiveRecord::Base
     # Cemetery/Obituary
     @items << { :name => "Cemetery, Obituary", :year => death_year + 1 }
 
+    # War records
+    if birth_year <= 1812 and death_year >= 1812
+      @items << { :name => "1812-1815 War of 1812", :year => 1812 } 
+    end
+    if birth_year <= 1861 and death_year >= 1861
+      @items << { :name => "1861-1865 Civil War", :year => 1861 }
+    end
+    if birth_year <= 1914 and death_year >= 1914
+      @items << { :name => "1914-1918 World War I", :year => 1914 }
+    end
+    if birth_year <= 1939 and death_year >= 1939
+      @items << { :name => "1939-1945 World War II", :year => 1939 }
+    end
+
     @items.sort! { |a,b| a[:year] <=> b[:year] }
     @items
 
