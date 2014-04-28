@@ -30,10 +30,12 @@ class Checklist < ActiveRecord::Base
     end
 
     if death_year.nil?
-      death_year = birth_year + DEFAULT_LIFESPAN
+      end_year = birth_year + DEFAULT_LIFESPAN
+    else
+      end_year = death_year
     end
 
-    last_census_year = death_year - (death_year.to_s[3].to_i)     
+    last_census_year = end_year - (end_year.to_s[3].to_i)     
     if last_census_year >= 1940
       last_census_year = 1940
     end
@@ -55,7 +57,7 @@ class Checklist < ActiveRecord::Base
           state_records = State.find_by_code(lived_in_state).census_reports
           if state_records
             state_records.each do |sr|
-              if sr.year >= birth_year && sr.year <= death_year
+              if sr.year >= birth_year && sr.year <= end_year
                 @items << { :name => "#{sr.year} #{sr.state.code} Census", :year => sr.year }
               end
             end
@@ -65,22 +67,22 @@ class Checklist < ActiveRecord::Base
     end
 
     # Death Record
-    @items << { :name => "Death Certificate/Record", :year => death_year }
+    @items << { :name => "Death Certificate/Record", :year => end_year }
 
     # Cemetery/Obituary
-    @items << { :name => "Cemetery, Obituary", :year => death_year + 1 }
+    @items << { :name => "Cemetery, Obituary", :year => end_year + 1 }
 
     # War records
-    if birth_year <= 1812 and death_year >= 1812
+    if birth_year <= 1812 and end_year >= 1812
       @items << { :name => "1812-1815 War of 1812", :year => 1812 } 
     end
-    if birth_year <= 1861 and death_year >= 1861
+    if birth_year <= 1861 and end_year >= 1861
       @items << { :name => "1861-1865 Civil War", :year => 1861 }
     end
-    if birth_year <= 1914 and death_year >= 1914
+    if birth_year <= 1914 and end_year >= 1914
       @items << { :name => "1914-1918 World War I", :year => 1914 }
     end
-    if birth_year <= 1939 and death_year >= 1939
+    if birth_year <= 1939 and end_year >= 1939
       @items << { :name => "1939-1945 World War II", :year => 1939 }
     end
 
