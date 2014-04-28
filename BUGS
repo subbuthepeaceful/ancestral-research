@@ -1,0 +1,25 @@
+BUGS/TWEAKS:
+
+
+First/Middle Name/Last Name is not required
+
+Est birth year is required and has to be a 4 digit
+
+Move to 5 states with codes
+
+Add territories
+
+Format as vertical forms
+
+Turn into Select List as opposed to text fields
+
+Any of the states can be empty
+
+DEATH YEAR DEFAULTS TO BY + 100  
+
+Editable lines on checklist produced - to be saved as PDF
+
+FIRST US CENSUS IS 1790
+
+LAST US CENSUS IS 1940
+

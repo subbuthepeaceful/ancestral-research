@@ -1,6 +1,9 @@
 class Checklist < ActiveRecord::Base
   attr_accessible :first_middle_name, :last_name, :birth_year, :birth_location, :lived_in, :death_year, :death_location
 
+  validates_presence_of :birth_year
+  validates_numericality_of :birth_year
+
   def state(index)
     if lived_in
       states = lived_in.split(",")
@@ -22,6 +25,11 @@ class Checklist < ActiveRecord::Base
 
     # US Census Records
     first_census_year = birth_year + (10 - birth_year.to_s[3].to_i) 
+
+    if death_year.nil?
+      death_year = birth_year + DEFAULT_LIFESPAN
+    end
+
     last_census_year = death_year - (death_year.to_s[3].to_i)     
 
     year = first_census_year
@@ -34,17 +42,21 @@ class Checklist < ActiveRecord::Base
     @items << { :name => "Marriage Certificate/Record", :year => birth_year + 25 }
 
     # State Census
-    for i in 1..3
-      lived_in_state = state(i)
-      state_records = State.find_by_code(lived_in_state).census_reports
-      if state_records
-        state_records.each do |sr|
-          if sr.year >= birth_year && sr.year <= death_year
-            @items << { :name => "#{sr.year} #{sr.state.code} Census", :year => sr.year }
+    unless lived_in.blank?
+      for i in 1..3
+        lived_in_state = state(i)
+        if lived_in_state
+          state_records = State.find_by_code(lived_in_state).census_reports
+          if state_records
+            state_records.each do |sr|
+              if sr.year >= birth_year && sr.year <= death_year
+                @items << { :name => "#{sr.year} #{sr.state.code} Census", :year => sr.year }
+              end
+            end
           end
         end
-      end
-    end      
+      end      
+    end
 
     # Death Record
     @items << { :name => "Death Certificate/Record", :year => death_year }

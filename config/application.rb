@@ -63,3 +63,6 @@ module AncestralResearch
     config.assets.version = '1.0'
   end
 end
+
+NUM_LIVED_IN_STATES = 5
+DEFAULT_LIFESPAN = 100
