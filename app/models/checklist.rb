@@ -49,7 +49,7 @@ class Checklist < ActiveRecord::Base
 
     # State Census
     unless lived_in.blank?
-      for i in 1..3
+      for i in 1..NUM_LIVED_IN_STATES
         lived_in_state = state(i)
         if lived_in_state
           state_records = State.find_by_code(lived_in_state).census_reports

@@ -17,6 +17,7 @@ class ChecklistsController < ApplicationController
     for i in 1..NUM_LIVED_IN_STATES
       unless params["state_#{i}"].blank?
         lived_in << params["state_#{i}"]
+        lived_in << ","
       end
     end
     @checklist.lived_in = lived_in
