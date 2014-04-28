@@ -25,12 +25,18 @@ class Checklist < ActiveRecord::Base
 
     # US Census Records
     first_census_year = birth_year + (10 - birth_year.to_s[3].to_i) 
+    if first_census_year < 1790
+      first_census_year = 1790
+    end
 
     if death_year.nil?
       death_year = birth_year + DEFAULT_LIFESPAN
     end
 
     last_census_year = death_year - (death_year.to_s[3].to_i)     
+    if last_census_year >= 1940
+      last_census_year = 1940
+    end
 
     year = first_census_year
     while year <= last_census_year
