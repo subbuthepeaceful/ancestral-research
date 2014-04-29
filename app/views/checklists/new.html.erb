@@ -22,15 +22,16 @@
       <%= text_field_tag "name", @checklist.name, :class => "form-control", :placeholder => "First and Last Name" %>
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group has-feedback">
     <label class="col-sm-4 control-label">Est. Birth Year:</label>
-    <div class="col-sm-1">
+    <div class="col-sm-2">
       <%= text_field_tag "birth_year", '', :class => "form-control" %>
+      <span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-4 control-label">Est. Death Year:</label>
-    <div class="col-sm-1">
+    <div class="col-sm-2">
       <%= text_field_tag "death_year", '', :class => "form-control" %>
     </div>
   </div>
