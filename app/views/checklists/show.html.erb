@@ -1,8 +1,8 @@
-<div class="panel panel-default">
+<div class="panel panel-primary">
   <div class="panel-heading">
-    <h2><%= @checklist.first_middle_name %>&nbsp;<%= @checklist.last_name %></h2>
-    <p>Born:&nbsp;<%= @checklist.birth_year %>, <%= @checklist.birth_location %></p>
-    <p>Died:&nbsp;<%= @checklist.death_year %>, <%= @checklist.death_location %></p>
+    <h2><%= @checklist.name %></h2>
+    <p>Born:&nbsp;<%= @checklist.birth_year %></p>
+    <p>Died:&nbsp;<%= @checklist.death_year %></p>
     <p>Resident of <%= @checklist.lived_in %></p>
   </div>
   <div class="panel-content">

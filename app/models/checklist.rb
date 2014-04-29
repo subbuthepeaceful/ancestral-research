@@ -1,5 +1,5 @@
 class Checklist < ActiveRecord::Base
-  attr_accessible :first_middle_name, :last_name, :birth_year, :birth_location, :lived_in, :death_year, :death_location
+  attr_accessible :name, :birth_year, :lived_in, :death_year
 
   validates_presence_of :birth_year
   validates_numericality_of :birth_year
@@ -21,7 +21,7 @@ class Checklist < ActiveRecord::Base
     @items = []
 
     # Birth 
-    @items << { :name => "Birth Certificate/Record", :year => birth_year }
+    @items << { :name => "Birth Record", :year => birth_year }
 
     # US Census Records
     first_census_year = birth_year + (10 - birth_year.to_s[3].to_i) 
@@ -47,7 +47,7 @@ class Checklist < ActiveRecord::Base
     end
 
     # Marriage Record
-    @items << { :name => "Marriage Certificate/Record", :year => birth_year + 25 }
+    @items << { :name => "Marriage Record", :year => birth_year + 25 }
 
     # State Census
     unless lived_in.blank?
@@ -67,7 +67,7 @@ class Checklist < ActiveRecord::Base
     end
 
     # Death Record
-    @items << { :name => "Death Certificate/Record", :year => end_year }
+    @items << { :name => "Death Record", :year => end_year }
 
     # Cemetery/Obituary
     @items << { :name => "Cemetery, Obituary", :year => end_year + 1 }

@@ -9,8 +9,7 @@ class ChecklistsController < ApplicationController
   def create
     @checklist = Checklist.new 
 
-    @checklist.first_middle_name = params["first_middle_name"]
-    @checklist.last_name = params["last_name"]
+    @checklist.name = params["name"]
     @checklist.birth_year = params["birth_year"]
 
     lived_in = ""

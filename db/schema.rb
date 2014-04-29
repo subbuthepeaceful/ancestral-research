@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140422053357) do
+ActiveRecord::Schema.define(:version => 20140429131800) do
 
   create_table "census_reports", :force => true do |t|
     t.integer "state_id", :null => false
@@ -19,13 +19,10 @@ ActiveRecord::Schema.define(:version => 20140422053357) do
   end
 
   create_table "checklists", :force => true do |t|
-    t.string  "first_middle_name"
-    t.string  "last_name"
     t.integer "birth_year"
-    t.string  "birth_location"
     t.string  "lived_in"
     t.integer "death_year"
-    t.string  "death_location"
+    t.string  "name"
   end
 
   create_table "states", :force => true do |t|

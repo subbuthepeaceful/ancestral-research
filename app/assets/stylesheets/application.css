@@ -16,6 +16,7 @@
   background: #EEE;
   padding-top: 2%;
   padding-bottom: 2%;
+  border: 3px solid #428bca;
  }
 
  div.checklist-row { margin-left: 5%; margin-top: 2%; font-size: 16px;}
@@ -23,3 +24,5 @@
  div.checklist-line { border-bottom: 2px solid black; margin-left: 24%;}
 
  div#error_explanation { margin: 0 auto; color: red; font-weight: bold;}
+
+ div.panel-primary { padding-bottom: 10%;}

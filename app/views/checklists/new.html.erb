@@ -1,4 +1,11 @@
-<h1>Research Checklist</h1>
+<h1>Research Guideline</h1>
+<p><b>Use this Research Guideline to help guide your family research.  Once you’ve entered a bit of data, then you can use it to prompt the records for which you should find.  Here’s how to get started:</b></p>
+<ol>
+  <li>Enter your ancestor’s first and last name (this is just for your future use, it is not a search field).</li>
+  <li>Enter the estimated birth year (this is required), locations in which your ancestor lived, and then the estimated death year.</li>
+  <li>The Research Guideline will then be generated for you.</li>
+  <li>Just use your browser's Print function to print your customized Research Guideline to help you start your research.</li>
+</ol>
 <%= form_tag checklists_path, :class => "form-horizontal", :role => "form"  do %>
   <% if @checklist.errors.any? -%>
     <div id="error_explanation">
@@ -10,15 +17,9 @@
     </div>
   <% end -%>
   <div class="form-group">
-    <label class="col-sm-4 control-label">First and Middle Name:</label>
+    <label class="col-sm-4 control-label">Name:</label>
     <div class="col-sm-4">
-      <%= text_field_tag "first_middle_name", @checklist.first_middle_name, :class => "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-4 control-label">Last Name:</label>
-    <div class="col-sm-4">
-      <%= text_field_tag "last_name", '', :class => "form-control" %>
+      <%= text_field_tag "name", @checklist.name, :class => "form-control", :placeholder => "First and Last Name" %>
     </div>
   </div>
   <div class="form-group">
