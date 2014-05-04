@@ -73,6 +73,9 @@ class Checklist < ActiveRecord::Base
     @items << { :name => "Cemetery, Obituary", :year => end_year + 1 }
 
     # War records
+    if birth_year <= 1775 and end_year >= 1775
+      @items << { :name => "1775-1783 Revolutionary War", :year => 1775 }
+    end
     if birth_year <= 1812 and end_year >= 1812
       @items << { :name => "1812-1815 War of 1812", :year => 1812 } 
     end
