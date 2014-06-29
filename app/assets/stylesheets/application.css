@@ -27,8 +27,14 @@
 
  div.panel-primary { padding-bottom: 10%;}
 
- span.inset { margin-left: 2%;}
+ p.inset { margin-left: 2%;}
 
  table#vitals { width: 30%; margin-left: 2%;}
 
  table#vitals td { border-top: none;}
+
+ div#resources { margin-top: 2%; background: #EEE; color: black;}
+
+ div#resources ul { list-style: none;}
+
+ div#resources li { padding: 3%;}

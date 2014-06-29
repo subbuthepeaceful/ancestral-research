@@ -1,32 +1,55 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h2><%= @checklist.name %></h2>
-    <table class="table table-condensed" id="vitals">
-      <tr>
-        <td>Born</td>
-        <td><%= @checklist.birth_year %></td>
-        <td>Location</td>
-        <td>______________</td>
-      </tr>
-      <tr>
-        <td>Married</td>
-        <td>____</td>
-        <td>Location</td>
-        <td>______________</td>
-      </tr>
-      <tr>
-        <td>Died</td>
-        <td><%= @checklist.death_year %></td>
-        <td>Location</td>
-        <td>______________</td>
-      </tr>
-    </table>
-    <p>Resident of <%= @checklist.lived_in %></p>
-    <p class="inset">Parents:&nbsp;_______________________</p>
-    <p class="inset">Spouse:&nbsp;_______________________</p>
-    <p class="inset">Children:&nbsp;_______________________</p>
+    <div class="row">
+      <div class="col-lg-9">
+        <h2><%= @checklist.name %></h2>
+        <table class="table table-condensed" id="vitals">
+          <tr>
+            <td>Born</td>
+            <td><%= @checklist.birth_year %></td>
+            <td>Location</td>
+            <td>______________</td>
+          </tr>
+          <tr>
+            <td>Married</td>
+            <td>____</td>
+            <td>Location</td>
+            <td>______________</td>
+          </tr>
+          <tr>
+            <td>Died</td>
+            <td><%= @checklist.death_year %></td>
+            <td>Location</td>
+            <td>______________</td>
+          </tr>
+        </table>
+        <p>Resident of <%= @checklist.lived_in %></p>
+        <p class="inset">Parents:&nbsp;_______________________</p>
+        <p class="inset">Spouse:&nbsp;_______________________</p>
+        <p class="inset">Children:&nbsp;_______________________</p>
+      </div>
+      <div class="col-lg-3" id="resources">
+        <ul>
+          <li>          
+            <span class="glyphicon glyphicon-unchecked"></span>&nbsp;Ancestry
+           </li> 
+          <li>          
+            <span class="glyphicon glyphicon-unchecked"></span>&nbsp;Family Search
+           </li> 
+          <li>          
+            <span class="glyphicon glyphicon-unchecked"></span>&nbsp;Google
+           </li> 
+          <li>          
+            <span class="glyphicon glyphicon-unchecked"></span>&nbsp;________________
+           </li> 
+          <li>          
+            <span class="glyphicon glyphicon-unchecked"></span>&nbsp;_________________
+           </li> 
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="panel-content">
+  <div class="panel-body">
     <% @checklist.items.each do |item| -%>
       <div class="row">
         <div class="col-lg-10 checklist-row">
