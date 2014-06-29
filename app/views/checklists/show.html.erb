@@ -1,9 +1,30 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h2><%= @checklist.name %></h2>
-    <p>Born:&nbsp;<%= @checklist.birth_year %></p>
-    <p>Died:&nbsp;<%= @checklist.death_year %></p>
+    <table class="table table-condensed" id="vitals">
+      <tr>
+        <td>Born</td>
+        <td><%= @checklist.birth_year %></td>
+        <td>Location</td>
+        <td>______________</td>
+      </tr>
+      <tr>
+        <td>Married</td>
+        <td>____</td>
+        <td>Location</td>
+        <td>______________</td>
+      </tr>
+      <tr>
+        <td>Died</td>
+        <td><%= @checklist.death_year %></td>
+        <td>Location</td>
+        <td>______________</td>
+      </tr>
+    </table>
     <p>Resident of <%= @checklist.lived_in %></p>
+    <p class="inset">Parents:&nbsp;_______________________</p>
+    <p class="inset">Spouse:&nbsp;_______________________</p>
+    <p class="inset">Children:&nbsp;_______________________</p>
   </div>
   <div class="panel-content">
     <% @checklist.items.each do |item| -%>

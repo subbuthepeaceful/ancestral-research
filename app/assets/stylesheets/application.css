@@ -26,3 +26,9 @@
  div#error_explanation { margin: 0 auto; color: red; font-weight: bold;}
 
  div.panel-primary { padding-bottom: 10%;}
+
+ span.inset { margin-left: 2%;}
+
+ table#vitals { width: 30%; margin-left: 2%;}
+
+ table#vitals td { border-top: none;}
