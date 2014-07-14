@@ -1,4 +1,4 @@
-<div class="panel panel-primary">
+<div class="panel panel-info">
   <div class="panel-heading">
     <div class="row">
       <div class="col-lg-9">
@@ -50,7 +50,75 @@
     </div>
   </div>
   <div class="panel-body">
-    <% @checklist.items.each do |item| -%>
+    <div class="col-lg-10 checklist-group">
+      <span class="checklist-group-name">Vital Records</span>
+    </div>
+    <% @checklist.items[1][:vital_records].each do |item| -%>
+      <div class="row">
+        <div class="col-lg-10 checklist-row">
+          <span class="glyphicon glyphicon-unchecked"></span>
+          <span class="checklist-item"><%= item[:name] %></span>
+          <div class="checklist-line">
+          </div>
+        </div>
+      </div>
+    <% end -%>
+    <div class="col-lg-10 checklist-group">
+      <span class="checklist-group-name">U.S. Census Records</span>
+    </div>
+    <% @checklist.items[1][:us_census_records].each do |item| -%>
+      <div class="row">
+        <div class="col-lg-10 checklist-row">
+          <span class="glyphicon glyphicon-unchecked"></span>
+          <span class="checklist-item"><%= item[:name] %></span>
+          <div class="checklist-line">
+          </div>
+        </div>
+      </div>
+    <% end -%>
+    <div class="col-lg-10 checklist-group">
+      <span class="checklist-group-name">State Census Records</span>
+    </div>
+    <% @checklist.items[1][:state_census_records].each do |item| -%>
+      <div class="row">
+        <div class="col-lg-10 checklist-row">
+          <span class="glyphicon glyphicon-unchecked"></span>
+          <span class="checklist-item"><%= item[:name] %></span>
+          <div class="checklist-line">
+          </div>
+        </div>
+      </div>
+    <% end -%>
+    <div class="col-lg-10 checklist-group">
+      <span class="checklist-group-name">Military Records</span>
+    </div>
+    <% @checklist.items[1][:military_records].each do |item| -%>
+      <div class="row">
+        <div class="col-lg-10 checklist-row">
+          <span class="glyphicon glyphicon-unchecked"></span>
+          <span class="checklist-item"><%= item[:name] %></span>
+          <div class="checklist-line">
+          </div>
+        </div>
+      </div>
+    <% end -%>
+    <div class="col-lg-10 checklist-group">
+      <span class="checklist-group-name">Other Records</span>
+    </div>
+    <% @checklist.items[1][:other_records].each do |item| -%>
+      <div class="row">
+        <div class="col-lg-10 checklist-row">
+          <span class="glyphicon glyphicon-unchecked"></span>
+          <span class="checklist-item"><%= item[:name] %></span>
+          <div class="checklist-line">
+          </div>
+        </div>
+      </div>
+    <% end -%>
+    <div class="col-lg-10 checklist-group">
+      <span class="checklist-group-name">To Do</span>
+    </div>
+    <% @checklist.items[1][:to_do_records].each do |item| -%>
       <div class="row">
         <div class="col-lg-10 checklist-row">
           <span class="glyphicon glyphicon-unchecked"></span>

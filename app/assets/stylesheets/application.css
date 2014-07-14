@@ -38,3 +38,5 @@
  div#resources ul { list-style: none;}
 
  div#resources li { padding: 3%;}
+
+ div.checklist-group { margin-left: 5%; margin-top: 2%; font-size: 18px; text-align: center; background: #EEE; padding: 0.5%; font-weight: bold;}
