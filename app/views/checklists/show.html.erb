@@ -1,26 +1,26 @@
 <div class="panel panel-info">
   <div class="panel-heading">
     <div class="row">
-      <div class="col-lg-9">
+      <div class="col-md-9">
         <h2><%= @checklist.name %></h2>
         <table class="table table-condensed" id="vitals">
           <tr>
             <td>Born</td>
             <td><%= @checklist.birth_year %></td>
             <td>Location</td>
-            <td>______________</td>
+            <td>___________________________________________</td>
           </tr>
           <tr>
             <td>Married</td>
             <td>____</td>
             <td>Location</td>
-            <td>______________</td>
+            <td>___________________________________________</td>
           </tr>
           <tr>
             <td>Died</td>
             <td><%= @checklist.death_year %></td>
             <td>Location</td>
-            <td>______________</td>
+            <td>___________________________________________</td>
           </tr>
         </table>
         <p>Resident of <%= @checklist.lived_in %></p>
@@ -28,7 +28,7 @@
         <p class="inset">Spouse:&nbsp;_______________________</p>
         <p class="inset">Children:&nbsp;_______________________</p>
       </div>
-      <div class="col-lg-3" id="resources">
+      <div class="col-md-3 pull-right" id="resources">
         <ul>
           <li>          
             <span class="glyphicon glyphicon-unchecked"></span>&nbsp;Ancestry
@@ -64,43 +64,19 @@
       </div>
     <% end -%>
     <div class="col-lg-10 checklist-group">
-      <span class="checklist-group-name">U.S. Census Records</span>
+      <span class="checklist-group-name">U.S. Census, State Census and Military Records</span>
     </div>
-    <% @checklist.items[1][:us_census_records].each do |item| -%>
-      <div class="row">
-        <div class="col-lg-10 checklist-row">
-          <span class="glyphicon glyphicon-unchecked"></span>
-          <span class="checklist-item"><%= item[:name] %></span>
-          <div class="checklist-line">
+    <% @checklist.items[0].each do |item| -%>
+      <% unless item[:group] == "Vital Records" or item[:group] == "Other Records" or item[:group] == "To Do Records" -%>
+        <div class="row">
+          <div class="col-lg-10 checklist-row">
+            <span class="glyphicon glyphicon-unchecked"></span>
+            <span class="checklist-item"><%= item[:name] %></span>
+            <div class="checklist-line">
+            </div>
           </div>
         </div>
-      </div>
-    <% end -%>
-    <div class="col-lg-10 checklist-group">
-      <span class="checklist-group-name">State Census Records</span>
-    </div>
-    <% @checklist.items[1][:state_census_records].each do |item| -%>
-      <div class="row">
-        <div class="col-lg-10 checklist-row">
-          <span class="glyphicon glyphicon-unchecked"></span>
-          <span class="checklist-item"><%= item[:name] %></span>
-          <div class="checklist-line">
-          </div>
-        </div>
-      </div>
-    <% end -%>
-    <div class="col-lg-10 checklist-group">
-      <span class="checklist-group-name">Military Records</span>
-    </div>
-    <% @checklist.items[1][:military_records].each do |item| -%>
-      <div class="row">
-        <div class="col-lg-10 checklist-row">
-          <span class="glyphicon glyphicon-unchecked"></span>
-          <span class="checklist-item"><%= item[:name] %></span>
-          <div class="checklist-line">
-          </div>
-        </div>
-      </div>
+      <% end -%>
     <% end -%>
     <div class="col-lg-10 checklist-group">
       <span class="checklist-group-name">Other Records</span>

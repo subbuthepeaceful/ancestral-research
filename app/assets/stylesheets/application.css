@@ -19,13 +19,13 @@
   border: 3px solid #428bca;
  }
 
- div.checklist-row { margin-left: 5%; margin-top: 2%; font-size: 16px;}
+ div.checklist-row { margin-left: 5%; margin-top: 0.5%; font-size: 16px;}
 
  div.checklist-line { border-bottom: 2px solid black; margin-left: 24%;}
 
  div#error_explanation { margin: 0 auto; color: red; font-weight: bold;}
 
- div.panel-primary { padding-bottom: 10%;}
+ div.panel-primary { padding-bottom: 5%;}
 
  p.inset { margin-left: 2%;}
 
@@ -39,4 +39,4 @@
 
  div#resources li { padding: 3%;}
 
- div.checklist-group { margin-left: 5%; margin-top: 2%; font-size: 18px; text-align: center; background: #EEE; padding: 0.5%; font-weight: bold;}
+ div.checklist-group { margin-left: 5%; margin-top: 0.5%; font-size: 18px; text-align: center; background: #EEE; padding: 0.5%; font-weight: bold;}
