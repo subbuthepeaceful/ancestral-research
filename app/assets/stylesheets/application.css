@@ -19,24 +19,28 @@
   border: 3px solid #428bca;
  }
 
- div.checklist-row { margin-left: 5%; margin-top: 0.5%; font-size: 16px;}
+ div.container { width: 768px;}
+
+ div.checklist-row { margin-left: 5%; margin-top: 0.5%; font-size: 14px;}
 
  div.checklist-line { border-bottom: 2px solid black; margin-left: 24%;}
 
  div#error_explanation { margin: 0 auto; color: red; font-weight: bold;}
 
- div.panel-primary { padding-bottom: 5%;}
+ div.panel-primary { padding-bottom: 2%;}
 
- p.inset { margin-left: 2%;}
+ div.panel-name { float: left;}
+
+ p.inset { margin-left: 2%; font-size: 12px;}
 
  table#vitals { width: 30%; margin-left: 2%;}
 
- table#vitals td { border-top: none;}
+ table#vitals td { border-top: none; font-size: 12px;}
 
- div#resources { margin-top: 2%; background: #EEE; color: black;}
+ div#resources { margin-top: 1%; background: #EEE; color: black; }
 
  div#resources ul { list-style: none;}
 
- div#resources li { padding: 3%;}
+ div#resources li { padding: 0.25%;}
 
- div.checklist-group { margin-left: 5%; margin-top: 0.5%; font-size: 18px; text-align: center; background: #EEE; padding: 0.5%; font-weight: bold;}
+ div.checklist-group { margin-left: 5%; margin-top: 0.25%; font-size: 16px; text-align: center; background: #EEE; padding: 0.25%; font-weight: bold;}
