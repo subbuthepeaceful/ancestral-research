@@ -6,27 +6,24 @@
         <table class="table table-condensed" id="vitals">
           <tr>
             <td>Born</td>
-            <td><%= @checklist.birth_year %></td>
-            <td>Location</td>
-            <td>___________________________________________</td>
+            <td>(Date/Location)</td>
+            <td><%= @checklist.birth_year %>&nbsp;___________________________________________________________</td>
           </tr>
           <tr>
             <td>Married</td>
-            <td>____</td>
-            <td>Location</td>
-            <td>___________________________________________</td>
+            <td>(Date/Location)</td>
+            <td>&nbsp;_________________________________________________________________</td>
           </tr>
           <tr>
             <td>Died</td>
-            <td><%= @checklist.death_year %></td>
-            <td>Location</td>
-            <td>___________________________________________</td>
+            <td>(Date/Location)</td>
+            <td><%= @checklist.death_year %>&nbsp;___________________________________________________________</td>
           </tr>
         </table>
         <p>Resident of <%= @checklist.lived_in %></p>
-        <p class="inset">Parents:&nbsp;_______________________</p>
-        <p class="inset">Spouse:&nbsp;_______________________</p>
-        <p class="inset">Children:&nbsp;_______________________</p>
+        <p class="inset">Parents:&nbsp;_______________________________________________________________________________________________</p>
+        <p class="inset">Spouse:&nbsp;________________________________________________________________________________________________</p>
+        <p class="inset">Children:&nbsp;______________________________________________________________________________________________</p>
       </div>
       <div class="col-md-3 pull-right" id="resources">
         <ul>
